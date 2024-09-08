@@ -28,7 +28,7 @@ class Customer:
         self._orders.append(order)
         return order
 
-###############################
+
 
 class Coffee:
     def __init__(self, name):
@@ -59,7 +59,7 @@ class Coffee:
         total_price = sum(order.price for order in self._orders)
         return total_price / len(self._orders)
 
-###########################
+
 
 class Order:
     def __init__(self, customer, coffee, price):
