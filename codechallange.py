@@ -84,4 +84,21 @@ class Order:
         if not isinstance(self.price, (int, float)) or not (1.0 <= self.price <= 10.0):
             raise ValueError("Price must be a number between 1.0 and 10.0.")
 
+# Create some customers
+customer1 = Customer("Alice")
+customer2 = Customer("Bob")
 
+# Create some coffee
+coffee1 = Coffee("Latte")
+coffee2 = Coffee("Espresso")
+
+# Create orders
+order1 = customer1.create_order(coffee1, 5.0)
+order2 = customer2.create_order(coffee1, 6.5)
+order3 = customer1.create_order(coffee2, 4.0)
+
+# Access order data
+print(customer1.coffees())  # List of unique coffees Alice ordered
+print(coffee1.customers())  # List of customers who ordered the Latte
+print(coffee1.num_orders())  # Number of orders for Latte
+print(coffee1.average_price())  # Average price of orders for Latte
